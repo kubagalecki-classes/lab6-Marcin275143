@@ -11,10 +11,10 @@ using namespace std;
 
 vector <char> foo(list <Human>& lista)
 {
-class Porownaj { public: char operator() (Human &osoba) { if (osoba.isMonster() != true) return 'y'; else return 'n'; osoba.birthday(); }; } porownanie;
-        vector <char> Znaki (lista.size()); 
-    //  char znak;
-        for_each(lista.rbegin(), lista.rend(), porownanie);
-   //   transform(lista.rbegin(), lista.rend(), Znaki.begin(), porownanie);
-        return Znaki;
+    vector <char> Znaki (lista.size()); int  nr_znaku = 0;
+    class Porownaj { public: void operator() (Human& osoba) { if (osoba.isMonster() != true) Znaki[nr_znaku] = 'y'; else Znaki[nr_znaku] = 'n'; osoba.birthday(); nr_znaku++; }; } porownanie;
+//  class Porownaj { public: void operator() (Human& osoba) { if (osoba.isMonster() != true) return 'y'; else return 'n'; osoba.birthday();}; } porownanie;                           
+    for_each(lista.rbegin(), lista.rend(), porownanie);
+//  transform(lista.rbegin(), lista.rend(), Znaki[0], porownanie);
+    return Znaki;
 }
