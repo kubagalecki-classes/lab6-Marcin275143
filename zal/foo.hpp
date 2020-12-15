@@ -1,10 +1,13 @@
-#pragma once
+//#pragma once
 
-#include "Human.hpp"
 
+#include <iostream>
 #include <algorithm>
 #include <list>
 #include <vector>
+#include "Human.hpp"
+
+using namespace std;
 
 vector <char> foo(list <Human>& lista)
 {
