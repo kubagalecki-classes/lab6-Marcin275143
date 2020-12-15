@@ -6,11 +6,12 @@
 #include <list>
 #include <vector>
 
-std::vector< char > foo(std::list< Human >& people)
+vector <char> foo(list <Human>& lista)
 {
-    std::vector< char > ret_v(people.size());
-
-    // Twoja implementacja tutaj
-
-    return ret_v;
+class Porownaj { public: char operator() (Human &osoba) { if (osoba.isMonster() != true) return 'y'; else return 'n'; osoba.birthday(); }; } porownanie;
+        vector <char> Znaki (lista.size()); 
+    // char znak;
+    //  for_each(lista.rbegin(), lista.rend(), porownanie);
+        transform(lista.rbegin(), lista.rend(), Znaki.begin(), porownanie);
+        return Znaki;
 }
