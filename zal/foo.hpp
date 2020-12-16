@@ -12,5 +12,5 @@ class Porownaj { public: char operator() (Human& osoba) { if (osoba.isMonster() 
 
 vector <char> foo(list <Human>& lista)
 {
-    vector <char> Znaki; transform(lista.rbegin(), lista.rend(), Znaki.begin(), porownanie); return Znaki;
+    transform(lista.rbegin(), lista.rend(), Znaki.begin(), for_each(lista.begin(), lista.end(), porownanie));
 }
